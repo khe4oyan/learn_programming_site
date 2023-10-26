@@ -1,9 +1,41 @@
 .homePage {
-	
-	.homePage__posts {
-		width: 100%;
-		grid-gap: 5px;
-		display: flex;
-		flex-wrap: wrap;
+	.container {
+		display: grid;
+		grid-template-columns: 70% 30%;
+
+		.homePage__posts {
+			width: 100%;
+			grid-gap: 5px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.homePage__academyBox {
+			height: 350px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			.homePage__academyBox__img {
+				width: 160px;
+			}
+			.homePage__academyBox__title {
+				color: $color-primary-dark;
+				font-weight: 100;
+				font-size: 1.8rem;
+				margin-bottom: 20px;
+			}
+			.homePage__academyBox__link {
+				padding: 10px 15px;
+				border-radius: 12px;
+				font-size: 1.4rem;
+				color: $color-white;
+				background-color: $color-primary;
+				transition: .15s;
+			}
+			.homePage__academyBox__link:hover {
+				background-color: $color-primary-light;
+			}	
+		}
 	}
 }

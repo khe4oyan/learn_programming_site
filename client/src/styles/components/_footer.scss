@@ -1,0 +1,14 @@
+.footer {
+	margin-top: 2rem;
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		color: $color-black-light;
+		font-size: .8em;
+		.footer__links {
+			a {
+				fill: $color-primary-dark;
+			}
+		}
+	}
+}
