@@ -1,0 +1,9 @@
+.homePage {
+	
+	.homePage__posts {
+		width: 100%;
+		grid-gap: 5px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+}

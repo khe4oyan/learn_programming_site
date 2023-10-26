@@ -4,5 +4,11 @@
 @import "./base/variables";
 @import "./components/footer";
 @import "./components/header";
+@import "./components/postShort";
 @import "./pages/home";
 @import "./pages/post";
+
+.container {
+	max-width: 1441px;
+	margin: auto;
+}

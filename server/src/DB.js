@@ -1,22 +1,22 @@
-const postTypes = [
-	'headerText',
-	'youtube',
-	'paragraph',
-	'image',
-	'numberList',
-	'pointList',
-];
+const postTypes = {
+	headerText: 'headerText',
+	youtube: 'youtube',
+	paragraph: 'paragraph',
+	image: 'image',
+	numberList: 'numberList',
+	pointList: 'pointList',
+};
 
 const createPost = (type, content) => {
 	return { type, content };
 }
 
-const HT = (content) => { return createPost(postTypes[0], content); }
-const YT = (content) => { return createPost(postTypes[1], content); }
-const PR = (content) => { return createPost(postTypes[2], content); }
-const IMG = (content) => { return createPost(postTypes[3], content); }
-const NL = (content) => { return createPost(postTypes[4], content); }
-const PL = (content) => { return createPost(postTypes[5], content); }
+const HT = (content) => { return createPost(postTypes.headerText, content); }
+const YT = (content) => { return createPost(postTypes.youtube, content); }
+const PR = (content) => { return createPost(postTypes.paragraph, content); }
+const IMG = (content) => { return createPost(postTypes.image, content); }
+const NL = (content) => { return createPost(postTypes.numberList, content); }
+const PL = (content) => { return createPost(postTypes.pointList, content); }
 
 const DB = {
 	trends: [],

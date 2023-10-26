@@ -1,0 +1,40 @@
+.postShort {
+	min-width: 450px;
+	max-width: 700px;
+	width: 100%;
+	height: 150px;
+	background-color: $color-white-dark;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	padding: 10px;
+	border-radius: 5px;
+	margin: auto;
+	flex: 1;
+
+	.postShort__titleBox {
+		a {
+			color: $color-primary;
+			font-weight: bold;
+		}
+		.postShort__titleBox__shortParagraph {
+			margin-top: 10px;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			color: $color-black-light;
+		}
+	}
+
+	.postShort__previewBox {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		.postShort__preview {
+			width: 100%;
+			height: 100%;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+	}
+}

@@ -6,19 +6,25 @@ export default function Home() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		// setPosts(api.getPostsList());
+		api.getPostsList()
+		.then(d => setPosts(d));
 	}, []);
 
 	return (
-		<div>
-			{
-				posts.map((item, i) => 
-					<PostShort 
-						key={`postShort_key${i}`}
-						data={item}
-					/>
-				)
-			}
+		<div className='homePage'>
+			<div className='homePage__trends container'>
+				{/* <h2>Trends</h2> */}
+			</div>
+			<div className='homePage__posts container'>
+				{
+					posts.map((item, i) => 
+						<PostShort 
+							key={`postShort_key${i}`}
+							data={item}
+						/>
+					)
+				}
+			</div>
 		</div>
 	)
 }
