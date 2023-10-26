@@ -1,0 +1,47 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: $color-white;
+  box-shadow: 0px 1px 4px (rgba(0, 0, 0, 0.2));
+  & .academy-visit {
+    padding: 1rem;
+    display: none;
+    & .academy-logo {
+      @include respond(phone) {
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }
+    & div:nth-child(2) {
+      padding: 1rem;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    @include respond(phone) {
+      display: flex;
+      position: unset;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0;
+    }
+  }
+  & .heading-primary {
+    font-family: "Gilroy-semibold";
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 2rem 1rem;
+    color: $color-primary;
+    cursor: pointer;
+    @include respond(phone) {
+      text-align: center;
+      font-size: 3rem;
+      padding: 1rem;
+    }
+  }
+}

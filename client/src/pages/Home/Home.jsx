@@ -6,7 +6,7 @@ export default function Home() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
-		setPosts(api.getPostsList());
+		// setPosts(api.getPostsList());
 	}, []);
 
 	return (
