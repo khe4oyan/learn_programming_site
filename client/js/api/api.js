@@ -1,5 +1,5 @@
 // all server requests in there
-import SERVER_ADDRESS from './serverConfig'
+const SERVER_ADDRESS = 'http://localhost:5000';
 
 const serverReq = async (req) => {
 	const r = await fetch(req);

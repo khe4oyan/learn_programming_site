@@ -1,14 +1,22 @@
 .footer {
 	margin-top: 2rem;
+
 	.container {
 		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		color: $color-black-light;
 		font-size: .8em;
+		p:nth-child(2) {
+			text-align: center;
+		}
 		.footer__links {
+			display: flex;
+			justify-content: flex-end;
 			a {
 				fill: $color-primary-dark;
+				text-align: right;
 			}
+			
 		}
 	}
 }
