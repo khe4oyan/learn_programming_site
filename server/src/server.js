@@ -60,9 +60,6 @@ server.get('/post/:postId', (req, res) => {
 });
 
 server.get('/img/:imgName', async (req, res) => {
-	// const imageName = req.params.imgName;
-	// res.send(__dirname + `/public/img/${imageName}`);
-
 	const imageName = req.params.imgName;
   const imagePath = path.join(__dirname, 'public/img', imageName);
   res.sendFile(imagePath);
