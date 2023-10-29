@@ -7,7 +7,6 @@ import PointList from '../components/postsTypes/PointList.js'
 import Paragraph from '../components/postsTypes/Paragraph.js'
 import Youtube from '../components/postsTypes/Youtube.js'
 
-
 {
 	const urlParams = new URLSearchParams(window.location.search);
 	const postId = urlParams.get('postId');
