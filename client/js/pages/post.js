@@ -12,10 +12,11 @@ import Youtube from '../components/postsTypes/Youtube.js'
 	const postId = urlParams.get('postId');
 
 	const posts = DOM.CE('div', 'post', document.body);
+	const container = DOM.CE('div', ['container', 'post__container'], posts);
 
 	api.getPostFromId(postId)
 		.then(postData => {
-			const postTitle = DOM.CE('h2', 'post__title', posts);
+			const postTitle = DOM.CE('h2', 'post__title', container);
 			postTitle.innerText = postData.title;
 
 			api.getAllPostTypes()
@@ -25,12 +26,12 @@ import Youtube from '../components/postsTypes/Youtube.js'
 						const { type, content } = contentData[i];
 
 						switch (type) {
-							case allPostTypes.headerText: { posts.appendChild(HeaderText(content)); break; }
-							case allPostTypes.youtube: { posts.appendChild(Youtube(content)); break; }
-							case allPostTypes.paragraph: { posts.appendChild(Paragraph(content)); break; }
-							case allPostTypes.image: { posts.appendChild(Image(content)); break; }
-							case allPostTypes.numberList: { posts.appendChild(NumberList(content)); break; }
-							case allPostTypes.pointList: { posts.appendChild(PointList(content)); break; }
+							case allPostTypes.headerText: { 	container.appendChild( HeaderText(content) ); 	break; }
+							case allPostTypes.youtube: { 			container.appendChild( Youtube(content) ); 			break; }
+							case allPostTypes.paragraph: { 		container.appendChild( Paragraph(content) ); 		break; }
+							case allPostTypes.image: { 				container.appendChild( Image(content) ); 				break; }
+							case allPostTypes.numberList: { 	container.appendChild( NumberList(content) ); 	break; }
+							case allPostTypes.pointList: { 		container.appendChild( PointList(content) ); 		break; }
 						}
 					}
 				})

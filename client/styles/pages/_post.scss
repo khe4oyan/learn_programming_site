@@ -1,5 +1,88 @@
-.postPage {
-	img {
-		width: 500px; // temp
+.post {
+	.post__container {
+		max-width: 800px;
+
+		.post__title {
+			text-align: center;
+			font-size: 2rem;
+			margin-bottom: 2rem;
+			color: $color-primary;
+		}
+		
+		.post__headerText {
+			padding: 5px;
+			// background-color: $color-primary-2; // variant 1
+			background: $color-primary-dark; // variant 2
+			margin-top: 1.5rem;
+			margin-bottom: .8rem;
+			h3 {
+				// color: $color-primary-2-dark; // variant 1
+				color: $color-white; // variant 2
+				text-align: center;
+			}
+		}
+
+		.post__image {
+			// width: 70%;
+			margin: auto;
+			margin-bottom: .5rem;
+			.post__image__img {
+				width: 100%;
+				max-height: 400px;
+				object-fit: contain;
+				border-radius: 5px;
+			}
+		}
+
+		.numberList {
+			width: 95%;
+			margin: auto;
+			
+			.numberList_line {
+				margin-bottom: .3rem;
+				display: grid;
+				grid-template-columns: 30px 1fr;
+				text-align: justify;
+				// span {}
+			}
+		}
+
+		.post__paragraph {
+			margin-bottom: .5rem;
+			text-align: justify;
+			a {
+				color: $color-primary-dark;
+				font-weight: bold;
+				text-decoration: underline;
+				text-underline-offset: 7%;
+			}
+		}
+
+		.post__pointList {
+			width: 90%;
+			margin: auto;
+			margin-bottom: .5rem;
+
+			ul {
+				.post__pointList__li {
+					margin-bottom: .3rem;
+				}
+			}
+		}
+
+		.post__youtube {
+			width: 90%;
+			margin: auto;
+			height: 380px;
+			border-radius: 5px;
+			overflow: hidden;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+
+			#ytplayer {
+				width: 100%;
+				height: 100%;
+			}
+		}
 	}
 }

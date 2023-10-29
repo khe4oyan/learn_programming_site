@@ -5,7 +5,7 @@ export default function NumberList(dataList) {
 
 	for (let i = 0; i < dataList.length; ++i) {
 		const p = DOM.CE('p', 'numberList_line', numberList);
-		p.innerHTML = `${i}. ${dataList[i]}`;
+		p.innerHTML = `<span>${i + 1}.</span> ${dataList[i]}`;
 	}
 
 	return numberList;

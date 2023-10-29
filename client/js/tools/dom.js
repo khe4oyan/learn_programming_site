@@ -44,7 +44,7 @@ export class DOM {
 
 	static YTframe(YTlink) {
 		return `
-			<iframe id="ytplayer" type="text/html" width="640" height="360"
+			<iframe id="ytplayer" type="text/html" width="100%" height="inherit"
 				src=${YTlink}
 				frameborder="0">
 			</iframe>
