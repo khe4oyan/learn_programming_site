@@ -7,6 +7,7 @@ import { DOM } from '../tools/dom.js';
 	
 	api.getPostFromId(postId)
 	.then(postData => {
-		console.log(postData);
+		const posts = DOM.CE('div', 'post');
+		const postTitle = DOM.CE('h2', );
 	});
 }
