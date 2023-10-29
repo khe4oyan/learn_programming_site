@@ -18,25 +18,36 @@ export class DOM {
 		return element;
 	}
 
-	static img(src, alt, classData) {
+	static img(src, alt, classData, parrent = null) {
 		const img = new Image();
 		img.src = src;
 		img.alt = alt;
 		this.#classList(classData, img);
+		parrent && parrent.appendChild(img);
 
 		return img;
 	}
 
-	static link(href, linkText, target = null) {
+	static link(href, linkText, target = null, parrent = null) {
 		const a = document.createElement('a');
 		a.href = href;
 		a.innerHTML = linkText;
 		target && (a.target = target);
-		
+		parrent && parrent.appendChild(a);
+
 		return a;
 	}
-	
+
 	static GE(elementName) {
 		return document.querySelector(elementName);
+	}
+
+	static YTframe(YTlink) {
+		return `
+			<iframe id="ytplayer" type="text/html" width="640" height="360"
+				src=${YTlink}
+				frameborder="0">
+			</iframe>
+		`;
 	}
 }

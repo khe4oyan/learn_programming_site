@@ -179,3 +179,7 @@ a {
   max-width: 1441px;
   margin: auto;
 }
+
+img {
+  max-width: 100px;
+}
