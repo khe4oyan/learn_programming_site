@@ -21,15 +21,15 @@
         margin-left: 15px;
         color: $color-primary;
       }
-      .search {
-        outline: none;
-        border: none;
-        background: $color-white-dark;
-        height: 40px;
-        border-radius: 5px;
-        padding: 15px;
-      }
     }
+    // .search {
+    //   outline: none;
+    //   border: none;
+    //   background: $color-white-dark;
+    //   height: 40px;
+    //   border-radius: 5px;
+    //   padding: 15px;
+    // }
   }
   
   @include respond(mid) {

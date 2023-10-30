@@ -1,5 +1,13 @@
 import { DOM } from "../tools/dom.js";
 
+/*
+header
+	container
+		leftSide
+			logo
+			text
+*/
+
 export function Header(headerPath) {
 	const headerDOM = DOM.CE('header', 'header');
 	const container = DOM.CE('div', ['center', 'container'], headerDOM);
@@ -22,11 +30,11 @@ export function Header(headerPath) {
 		}
 	}
 
-	{
-		// const input = DOM.CE('input', 'search', container);
-		// input.type = 'search';
-		// input.placeholder = 'Search';
-	}
+	// {
+	// 	const input = DOM.CE('input', 'search', container);
+	// 	input.type = 'search';
+	// 	input.placeholder = 'Search';
+	// }
 
 	return headerDOM;
 }
