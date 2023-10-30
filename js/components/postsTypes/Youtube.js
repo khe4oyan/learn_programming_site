@@ -1,7 +1,7 @@
 import { DOM } from "../../tools/dom.js";
 
 export default function Youtube(youtubeLink) {
-	const YTBox = DOM.CE('div', 'post__youtube');
+	const YTBox = DOM.CE('div', 'youtube');
 
 	YTBox.innerHTML = DOM.YTframe(youtubeLink);
 

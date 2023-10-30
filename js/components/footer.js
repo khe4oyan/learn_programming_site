@@ -3,7 +3,7 @@ import { DOM } from "../tools/dom.js";
 {
 	const footer = DOM.CE('footer', 'footer', document.body);
 	const container = DOM.CE('div', 'container', footer);
-	const box = DOM.CE('div', 'footer__line_1', container);
+	const box = DOM.CE('div', 'line_1', container);
 
 	{
 		const p = DOM.CE('p', null, box);
@@ -28,7 +28,7 @@ import { DOM } from "../tools/dom.js";
 			},
 		];
 		
-		const footerLinks = DOM.CE('div', 'footer__links', box);
+		const footerLinks = DOM.CE('div', 'links', box);
 
 		for (let i = 0; i < linksWithIcons.length; ++i) {
 			const a = DOM.link(linksWithIcons[i].link, linksWithIcons[i].icon, '_blank');
@@ -37,11 +37,10 @@ import { DOM } from "../tools/dom.js";
 	}
 
 	{
-		const copyRight = DOM.CE('p', 'footer__copyright', container);
+		const copyRight = DOM.CE('p', 'copyright', container);
 		copyRight.innerText = `Picsart Academy © ${new Date().getFullYear()}, All rights reserved.`;
 	}
 }
-
 
 /* 
 <footer className='footer'>

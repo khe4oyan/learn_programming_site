@@ -1,11 +1,11 @@
 import { DOM } from "../../tools/dom.js";
 
 export default function PointList(dataList) {
-	const pointList = DOM.CE('div', 'post__pointList');
+	const pointList = DOM.CE('div', 'pointList');
 	const ul = DOM.CE('ul', null, pointList);
 
 	for (let i = 0; i < dataList.length; ++i) {
-		const li = DOM.CE('li', 'post__pointList__li', ul);
+		const li = DOM.CE('li', 'li', ul);
 		li.innerHTML = dataList[i];
 	}
 

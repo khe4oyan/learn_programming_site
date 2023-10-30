@@ -17,14 +17,14 @@ export function PostShort({ id, title, content }) {
 	}
 
 	{
-		const littleBox = DOM.CE('div', 'postShort__titleBox', elem);
+		const littleBox = DOM.CE('div', 'littleBox', elem);
 		const link = DOM.link(`post.html?postId=${id}`, title);
 		littleBox.appendChild(link);
-		const shortParag = DOM.CE('p', 'postShort__titleBox__shortParagraph', littleBox);
+		const shortParag = DOM.CE('p', 'shortParagraph', littleBox);
 		shortParag.innerHTML = textPreview;
 	}
 	{
-		const littleBox = DOM.CE('div', 'postShort__titleBox', elem);
+		const littleBox = DOM.CE('div', 'littleBox', elem);
 		const previewImage = DOM.CE('div', null, littleBox);
 
 		previewImage.style.background = `url(img/${img}) center center / cover no-repeat`;

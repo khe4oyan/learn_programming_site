@@ -14,9 +14,9 @@ import { DB, postTypes } from '../data/DB.js';
 	const postId = urlParams.get('postId');
 
 	const posts = DOM.CE('div', 'post', document.body);
-	const container = DOM.CE('div', ['container', 'post__container'], posts);
+	const container = DOM.CE('div', 'container', posts);
 
-	const postTitle = DOM.CE('h2', 'post__title', container);
+	const postTitle = DOM.CE('h2', 'title', container);
 	postTitle.innerText = DB.posts[postId].title;
 
 	const contentData = DB.posts[postId].content;

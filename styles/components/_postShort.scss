@@ -12,8 +12,8 @@
 	flex: 1;
 	grid-gap: 5px;
 
-	&__titleBox {
-		&__shortParagraph {
+	.littleBox {
+		.shortParagraph {
 			margin-top: 10px;
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
@@ -27,12 +27,6 @@
 		}
 	}
 
-	&__previewBox {
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-	}
-	
 	@include respond(mid) {
 		width: 100%;
 		max-width: initial;
