@@ -23,9 +23,9 @@ export function Header(headerPath) {
 	}
 
 	{
-		const input = DOM.CE('input', 'header__container__search', container);
-		input.type = 'search';
-		input.placeholder = 'Search';
+		// const input = DOM.CE('input', 'header__container__search', container);
+		// input.type = 'search';
+		// input.placeholder = 'Search';
 	}
 
 	return headerDOM;
