@@ -6,8 +6,10 @@ import NumberList from '../components/postsTypes/NumberLIst.js'
 import PointList from '../components/postsTypes/PointList.js'
 import Paragraph from '../components/postsTypes/Paragraph.js'
 import Youtube from '../components/postsTypes/Youtube.js'
+import { Header } from '../components/header.js';
 
 {
+	document.body.prepend(Header('post'));
 	const urlParams = new URLSearchParams(window.location.search);
 	const postId = urlParams.get('postId');
 

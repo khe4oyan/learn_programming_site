@@ -1,26 +1,34 @@
 import { DOM } from "../tools/dom.js";
 
-{
+export function Header(headerPath) {
 	const headerDOM = DOM.CE('header', 'header');
-	const container = DOM.CE('div', ['center', 'container'], headerDOM);
+	const container = DOM.CE('div', ['center', 'container', 'header__container'], headerDOM);
 
 	{
 		const leftSideBox = DOM.CE('div', 'center', container);
 
-		const logo = DOM.img('assets/logo.png', 'logo', 'header__logo');
+		const logo = DOM.img('assets/favicons/favicon-512.png', 'logo', 'header__container__logo');
 		leftSideBox.appendChild(logo);
 
-		const headerText = DOM.CE('h2', 'header__logo__text', leftSideBox);
-		headerText.innerText = 'Learn Programming';
+		const headerText = DOM.CE('h2', 'header__container__logo__text', leftSideBox);
+		if (headerPath === 'home') {
+			headerText.innerText = 'Սկսնակ ծրագրավորողի ուղեցույց';
+		} else if (headerPath === 'post') {
+			headerText.innerHTML = 'Տեսնել բոլոր հոդվածները';
+			headerText.classList.add('clickableText');
+			headerText.addEventListener('click', () => {
+				window.history.back();
+			});
+		}
 	}
 
 	{
-		const input = DOM.CE('input', 'header__search', container);
+		const input = DOM.CE('input', 'header__container__search', container);
 		input.type = 'search';
 		input.placeholder = 'Search';
 	}
 
-	document.body.prepend(headerDOM);
+	return headerDOM;
 }
 
 /*

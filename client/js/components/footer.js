@@ -3,14 +3,10 @@ import { DOM } from "../tools/dom.js";
 {
 	const footer = DOM.CE('footer', 'footer', document.body);
 	const container = DOM.CE('div', 'container', footer);
+	const box = DOM.CE('div', 'footer__line_1', container);
 
 	{
-		const copyRight = DOM.CE('p', null, container);
-		copyRight.innerText = `©${new Date().getFullYear()} Picsart Academy`;
-	}
-
-	{
-		const p = DOM.CE('p', null, container);
+		const p = DOM.CE('p', null, box);
 		p.innerText = 'Ուղեցույցը ստեղծվել և սիրով համալրվում է ';
 		const a = DOM.link('https://picsart.academy/', 'Picsart Academy-ի կողմից', '_blank');
 		p.innerHTML += "<a href='https://picsart.academy/' target='_blank'>Picsart Academy-ի կողմից</a>";
@@ -32,12 +28,17 @@ import { DOM } from "../tools/dom.js";
 			},
 		];
 		
-		const footerLinks = DOM.CE('div', 'footer__links', container);
+		const footerLinks = DOM.CE('div', 'footer__links', box);
 
 		for (let i = 0; i < linksWithIcons.length; ++i) {
 			const a = DOM.link(linksWithIcons[i].link, linksWithIcons[i].icon, '_blank');
 			footerLinks.appendChild(a);
 		}
+	}
+
+	{
+		const copyRight = DOM.CE('p', 'footer__copyright', container);
+		copyRight.innerText = `Picsart Academy © ${new Date().getFullYear()}, All rights reserved.`;
 	}
 }
 
