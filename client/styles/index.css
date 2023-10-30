@@ -216,6 +216,17 @@ a {
 .header .clickableText {
   cursor: pointer;
 }
+@media only screen and (max-width: 688px) {
+  .header__container {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .header__container .leftSideBox {
+    max-width: fit-content;
+    margin: auto;
+  }
+}
 .header__container__logo {
   width: 37px;
 }

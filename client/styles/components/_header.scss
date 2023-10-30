@@ -13,6 +13,15 @@
   }
 
   &__container {
+    @include respond(mid) {
+      font-size: 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      .leftSideBox {
+        max-width: fit-content;
+        margin: auto;
+      }
+    }
     &__logo {
       width: 37px;
     }

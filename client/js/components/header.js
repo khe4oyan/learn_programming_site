@@ -5,7 +5,7 @@ export function Header(headerPath) {
 	const container = DOM.CE('div', ['center', 'container', 'header__container'], headerDOM);
 
 	{
-		const leftSideBox = DOM.CE('div', 'center', container);
+		const leftSideBox = DOM.CE('div', ['center', 'leftSideBox'], container);
 
 		const logo = DOM.img('assets/favicons/favicon-512.png', 'logo', 'header__container__logo');
 		leftSideBox.appendChild(logo);
