@@ -329,6 +329,11 @@ a {
 }
 @media only screen and (max-width: 1370px) {
   .container {
+    padding: 0px 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container {
     padding: 0px 20px;
   }
 }
