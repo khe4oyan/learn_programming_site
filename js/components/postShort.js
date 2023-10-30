@@ -1,28 +1,38 @@
-import api from '../api/api.js'
 import { DOM } from "../tools/dom.js";
+import { postTypes } from '../data/DB.js'
 
-export
-	function PostShort({ id, title, img, textPreview }) {
+export function PostShort({ id, title, content }) {
 	const elem = DOM.CE('div', 'postShort');
+	let textPreview = '';
+	let img = '';
+
+	for (let i = 0; i < content.length; ++i) {
+		if (content[i].type === postTypes.image) {
+			img = content[i].content;
+		}
+
+		if (content[i].type === postTypes.paragraph) {
+			textPreview = content[i].content;
+		}
+	}
+
 	{
 		const littleBox = DOM.CE('div', 'postShort__titleBox', elem);
 		const link = DOM.link(`post.html?postId=${id}`, title);
 		littleBox.appendChild(link);
 		const shortParag = DOM.CE('p', 'postShort__titleBox__shortParagraph', littleBox);
-		shortParag.innerText = textPreview;
+		shortParag.innerHTML = textPreview;
 	}
 	{
 		const littleBox = DOM.CE('div', 'postShort__titleBox', elem);
 		const previewImage = DOM.CE('div', null, littleBox);
-		api.getImage(img)
-			.then(imgLink => {
-				previewImage.style.background = `url(${imgLink}) center center / cover no-repeat`;
-				littleBox.appendChild(previewImage);
-				previewImage.style.width = "100%";
-				previewImage.style.height = "100%";
-				previewImage.style.borderRadius = '4px';
-				previewImage.style.overflow = 'hidden';
-			});
+
+		previewImage.style.background = `url(img/${img}) center center / cover no-repeat`;
+		littleBox.appendChild(previewImage);
+		previewImage.style.width = "100%";
+		previewImage.style.height = "100%";
+		previewImage.style.borderRadius = '4px';
+		previewImage.style.overflow = 'hidden';
 	}
 
 	return elem;

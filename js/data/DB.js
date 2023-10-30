@@ -19,8 +19,6 @@ const NL = (content) => { return createPost(postTypes.numberList, content); }
 const PL = (content) => { return createPost(postTypes.pointList, content); }
 
 const DB = {
-	trends: [],
-
 	posts: [
 		{
 			id: 0, title: 'Ինչպե՞ս չդառնալ ծրագրավորող ', content: [
@@ -294,10 +292,4 @@ const DB = {
 	],
 };
 
-// add trends
-DB.trends.push(DB.posts[3]);
-DB.trends.push(DB.posts[1]);
-DB.trends.push(DB.posts[2]);
-DB.trends.push(DB.posts[0]);
-
-module.exports = { DB, postTypes };
+export { DB, postTypes };

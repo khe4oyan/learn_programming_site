@@ -1,7 +1,7 @@
 import { DOM } from "../tools/dom.js";
 import { PostShort } from "../components/postShort.js";
-import api from "../api/api.js";
 import { Header } from "../components/header.js";
+import {DB} from '../data/DB.js'
 
 {
 	const headerDOM = Header('home');
@@ -15,10 +15,8 @@ import { Header } from "../components/header.js";
 
 	document.body.prepend(headerDOM);
 	const homePostsDom = DOM.GE('.homePage__posts');
-	api.getPostsList()
-	.then(postsList => {
-		for (let i = 0; i < postsList.length; ++i) {
-			homePostsDom.appendChild(new PostShort(postsList[i]));
-		}
-	})
+
+	for (let i = 0; i < DB.posts.length; ++i) {
+		homePostsDom.appendChild(new PostShort(DB.posts[i]));
+	}
 }

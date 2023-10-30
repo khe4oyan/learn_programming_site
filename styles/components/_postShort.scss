@@ -20,6 +20,10 @@
 			-webkit-box-orient: vertical;
 			overflow: hidden;
 			color: $color-black-light;
+			a {
+				color: $color-black-light;
+				font-weight: 100;
+			}
 		}
 	}
 

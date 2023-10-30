@@ -142,6 +142,15 @@ a {
     padding: 5px 10px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .homePage__academyBox .homePage__academyBox__img {
+    width: 40px;
+  }
+  .homePage__academyBox .homePage__academyBox__link {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+}
 
 .post .post__container {
   max-width: 800px;
@@ -211,6 +220,14 @@ a {
   height: 100%;
 }
 
+/*
+header
+	container
+		leftSideBox
+			logo
+			text
+
+*/
 .header {
   position: sticky;
   top: 0;
@@ -224,31 +241,39 @@ a {
 .header .clickableText {
   cursor: pointer;
 }
-@media only screen and (max-width: 688px) {
-  .header__container {
-    font-size: 1rem;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .header__container .leftSideBox {
-    max-width: fit-content;
-    margin: auto;
-  }
-}
-.header__container__logo {
+.header .container .leftSideBox .logo {
   width: 37px;
 }
-.header__container__logo__text {
+.header .container .leftSideBox .text {
   margin-left: 15px;
   color: #c20bc1;
 }
-.header__container__search {
+.header .container .leftSideBox .search {
   outline: none;
   border: none;
   background: rgb(245, 243, 243);
   height: 40px;
   border-radius: 5px;
   padding: 15px;
+}
+@media only screen and (max-width: 688px) {
+  .header .container {
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .header .container .leftSideBox {
+    max-width: fit-content;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header .container .leftSideBox .logo {
+    display: none;
+  }
+  .header .container .leftSideBox .text {
+    font-size: 16px;
+  }
 }
 
 .footer {
@@ -311,6 +336,10 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: rgba(0, 0, 0, 0.7);
+}
+.postShort__titleBox__shortParagraph a {
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 100;
 }
 .postShort__previewBox {
   display: flex;
