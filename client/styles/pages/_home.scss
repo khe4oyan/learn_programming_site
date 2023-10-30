@@ -57,11 +57,13 @@
 	@include respond(tab-land) {
 		height: fit-content;
 		.homePage__academyBox__container {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
 			height: 100%;
 			width: fit-content;
 			padding: 0;
+			grid-gap: 5px;
 		}
 
 		.homePage__academyBox__img {
@@ -71,6 +73,7 @@
 			display: none;
 		}
 		.homePage__academyBox__link {
+			height: fit-content;
 			display: block;
 			padding: 5px 10px;
 		}
