@@ -2,6 +2,9 @@
 	.container {
 		display: grid;
 		grid-template-columns: 75% 25%;
+		@include respond(tab-land) {
+			display: block;
+		}
 
 		.homePage__posts {
 			width: 100%;
@@ -12,6 +15,7 @@
 
 	}
 }
+
 .homePage__academyBox {
 	height: 350px;
 	display: flex;
@@ -32,9 +36,6 @@
 		width: 160px;
 	}
 	.homePage__academyBox__title {
-		@include tab-land {
-			display: none;
-		}
 		color: $color-primary-dark;
 		font-weight: 100;
 		font-size: 1.8rem;
@@ -52,4 +53,26 @@
 	.homePage__academyBox__link:hover {
 		background-color: $color-primary-light;
 	}	
+	
+	@include respond(tab-land) {
+		height: fit-content;
+		.homePage__academyBox__container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			height: 100%;
+			width: fit-content;
+			padding: 0;
+		}
+
+		.homePage__academyBox__img {
+			width: 50px;
+		}
+		.homePage__academyBox__title {
+			display: none;
+		}
+		.homePage__academyBox__link {
+			display: block;
+			padding: 5px 10px;
+		}
+	}
 }

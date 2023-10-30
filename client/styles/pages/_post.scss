@@ -11,13 +11,11 @@
 		
 		.post__headerText {
 			padding: 5px;
-			// background-color: $color-primary-2; // variant 1
-			background: $color-primary-dark; // variant 2
+			background: $color-primary-dark;
 			margin-top: 1.5rem;
 			margin-bottom: .8rem;
 			h3 {
-				// color: $color-primary-2-dark; // variant 1
-				color: $color-white; // variant 2
+				color: $color-white;
 				text-align: center;
 			}
 		}

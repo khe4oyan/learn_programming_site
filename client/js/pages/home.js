@@ -7,7 +7,6 @@ import { Header } from "../components/header.js";
 	const headerDOM = Header('home');
 	const academyBoxDOM = DOM.GE('.homePage__academyBox');
 
-	console.log(window.innerWidth);
 	if (window.innerWidth < 1370) {
 		headerDOM.children[0].appendChild(academyBoxDOM);
 	} else {
