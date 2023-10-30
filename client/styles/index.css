@@ -127,6 +127,9 @@ a {
     padding: 0;
     grid-gap: 5px;
   }
+  .homePage__academyBox .homePage__academyBox__container :hover {
+    background: none;
+  }
   .homePage__academyBox .homePage__academyBox__img {
     width: 50px;
   }

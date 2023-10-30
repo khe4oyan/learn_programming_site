@@ -28,6 +28,7 @@
 		align-items: center;
 		justify-content: flex-end;
 	}
+	
 	@include respond(mid) {
 		width: 100%;
 		max-width: initial;
