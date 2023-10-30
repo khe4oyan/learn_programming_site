@@ -72,6 +72,11 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 688px) {
+  .homePage .container .homePage__posts {
+    display: block;
+  }
+}
 
 .homePage__academyBox {
   height: 350px;
@@ -254,6 +259,17 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+@media only screen and (max-width: 688px) {
+  .footer .container .footer__line_1 {
+    display: block;
+    text-align: center;
+  }
+  .footer .container .footer__line_1 .footer__links {
+    width: fit-content;
+    margin: auto;
+    margin-top: 5px;
+  }
+}
 .footer .container .footer__line_1 .footer__links {
   display: flex;
   justify-content: flex-end;
@@ -297,6 +313,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+@media only screen and (max-width: 688px) {
+  .postShort {
+    width: 100%;
+    max-width: initial;
+    min-width: initial;
+    margin-bottom: 5px;
+  }
 }
 
 .container {

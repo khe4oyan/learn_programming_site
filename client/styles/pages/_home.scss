@@ -13,6 +13,11 @@
 			flex-wrap: wrap;
 		}
 
+		@include respond(mid) {
+			.homePage__posts {
+				display: block;
+			}
+		}
 	}
 }
 

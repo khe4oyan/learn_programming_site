@@ -28,4 +28,10 @@
 		align-items: center;
 		justify-content: flex-end;
 	}
+	@include respond(mid) {
+		width: 100%;
+		max-width: initial;
+		min-width: initial;
+		margin-bottom: 5px;
+	}
 }

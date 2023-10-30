@@ -8,6 +8,15 @@
 		.footer__line_1 {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+			@include respond(mid) {
+				display: block;
+				text-align: center;
+				.footer__links {
+					width: fit-content;
+					margin: auto;
+					margin-top: 5px;
+				}
+			}
 
 			.footer__links {
 				display: flex;
