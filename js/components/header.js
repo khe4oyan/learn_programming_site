@@ -14,7 +14,7 @@ export function Header(headerPath) {
 		const headerText = DOM.CE('h2', 'text', leftSideBox);
 		if (headerPath === 'home') {
 			headerText.innerText = 'Սկսնակ ծրագրավորողի ուղեցույց';
-		} else if (headerPath === 'post') {
+		} else {
 			headerText.innerHTML = 'Տեսնել բոլոր հոդվածները';
 			headerText.classList.add('clickableText');
 			headerText.addEventListener('click', () => {

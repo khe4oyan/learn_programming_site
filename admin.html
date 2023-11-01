@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
     <title>Admin panel</title>
 </head>
 <body>
-    
+    <div class="admin">
+        <div class="container">
+            <!-- added text append in to this -->
+            <div class="preview"></div>
+
+            <!-- if create new post type append in to this input, cancel and add elements -->
+            <div class="inputs"></div>
+
+            <!-- post controls buttons -->
+            <div class="controls">
+                <button>create post</button>
+                <button>create data type</button>
+            </div>
+        </div>
+        <p class="result"></p>
+    </div>
+    <script type="module" src="js/pages/admin.js"></script>
+    <script type="module" src="js/components/footer.js"></script>
 </body>
 </html>
