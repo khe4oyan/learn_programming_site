@@ -14,11 +14,19 @@ import {DB, postTypes} from '../data/DB.js'
     const createPreview = (previewData) => {
         const elem = DOM.CE('div');
 
-        const apenedElem = null;
+        let apenedElem = null;
 
-        switch(preview.type) {
+        console.log(previewData.type);
+        switch(previewData.type) {
             case postTypes.headerText: { apenedElem = HeaderText(previewData.content);  break;}
+            case postTypes.image: { apenedElem = Image(previewData.content);  break;}
+            case postTypes.numberList: { apenedElem = NumberList(previewData.content);  break;}
+            case postTypes.paragraph: { apenedElem = Paragraph(previewData.content);  break;}
+            case postTypes.pointList: { apenedElem = PointList(previewData.content);  break;}
+            case postTypes.youtube: { apenedElem = Youtube(previewData.content);  break;}
         }
+
+        elem.appendChild(apenedElem);
 
         return elem;
     }
