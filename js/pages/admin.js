@@ -1,3 +1,10 @@
+import HeaderText from '../components/postsTypes/HeaderText.js'
+import Image from '../components/postsTypes/Image.js'
+import NumberList from '../components/postsTypes/NumberList.js'
+import Paragraph from '../components/postsTypes/Paragraph.js'
+import PointList from '../components/postsTypes/PointList.js'
+import Youtube from '../components/postsTypes/Youtube.js'
+
 import { DOM } from '../tools/dom.js';
 import {DB, postTypes} from '../data/DB.js'
 
@@ -5,11 +12,25 @@ import {DB, postTypes} from '../data/DB.js'
     const preview = [];
 
     const createPreview = (previewData) => {
-        // switch case previewData.type, create element and return it
         const elem = DOM.CE('div');
-        elem.innerText = 'previewData';
+
+        const apenedElem = null;
+
+        switch(preview.type) {
+            case postTypes.headerText: { apenedElem = HeaderText(previewData.content);  break;}
+        }
 
         return elem;
+    }
+
+    const previewPush = (data) => {
+        preview.push(data);
+
+        const previewDOM = DOM.GE('.preview');
+        previewDOM.innerHTML = '';
+        for (let i = 0; i < preview.length; ++i) {
+            previewDOM.appendChild(createPreview(preview[i]));
+        }
     }
 
     const createNewData = () => {
@@ -48,7 +69,7 @@ import {DB, postTypes} from '../data/DB.js'
                 type: dataTypesList.value,
             };
 
-            preview.push(post);
+            previewPush(post);
             newData.remove();
         });
 
