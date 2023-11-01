@@ -9,6 +9,7 @@
 @import "./components/header";
 @import "./components/footer";
 @import "./components/postShort";
+@import "./components/academyBox";
 
 .container {
 	@include respond(tab-land) {

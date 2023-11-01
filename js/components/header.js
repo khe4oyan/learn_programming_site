@@ -1,12 +1,5 @@
 import { DOM } from "../tools/dom.js";
-
-/*
-header
-	container
-		leftSide
-			logo
-			text
-*/
+import { academyBox } from "./academyBox.js";
 
 export function Header(headerPath) {
 	const headerDOM = DOM.CE('header', 'header');
@@ -29,12 +22,8 @@ export function Header(headerPath) {
 			});
 		}
 	}
+	container.appendChild(academyBox());
 
-	// {
-	// 	const input = DOM.CE('input', 'search', container);
-	// 	input.type = 'search';
-	// 	input.placeholder = 'Search';
-	// }
 
 	return headerDOM;
 }
