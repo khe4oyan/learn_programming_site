@@ -5,6 +5,7 @@
 
 @import "./pages/home";
 @import "./pages/post";
+@import "./pages/admin";
 
 @import "./components/header";
 @import "./components/footer";
@@ -12,11 +13,9 @@
 @import "./components/academyBox";
 
 .container {
-	@include respond(tab-land) {
-		padding: 0px 10px;
-	}
+	padding: 0px 20px;
 	@include respond(phone) {
-		padding: 0px 20px;
+		padding: 0px 16px;
 	}
 	max-width: 1441px;
 	margin: auto;
