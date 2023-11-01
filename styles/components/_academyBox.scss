@@ -1,3 +1,17 @@
+.header {
+    .academyBox {
+        @include respond(big-desktop) {
+            display: none;
+        }
+    }
+}
+.homePage {
+    .academyBox {
+        @include respond(tab-land) {
+            display: none;
+        }
+    }
+}
 
 .academyBox {
 	height: 350px;
