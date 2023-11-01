@@ -1,10 +1,10 @@
 const postTypes = {
-	headerText: 'headerText',
-	youtube: 'youtube',
-	paragraph: 'paragraph',
-	image: 'image',
-	numberList: 'numberList',
-	pointList: 'pointList',
+	headerText: 'Header Text',
+	youtube: 'YouTube',
+	paragraph: 'Paragraph',
+	image: 'Image',
+	numberList: 'Number List',
+	pointList: 'Point List',
 };
 
 const createPost = (type, content) => {
