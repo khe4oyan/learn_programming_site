@@ -146,6 +146,22 @@ a {
   height: 100%;
 }
 
+.admin .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.admin .container .inputs .text {
+  width: 100%;
+  height: 600px;
+}
+.admin .container .preview {
+  padding: 20px;
+  width: 100%;
+}
+.admin .container .preview img {
+  width: 50%;
+}
+
 .header {
   position: sticky;
   top: 0;

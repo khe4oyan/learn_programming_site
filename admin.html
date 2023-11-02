@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index.css">
-    <title>Admin panel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/index.css">
+  <title>Admin panel</title>
 </head>
+
 <body>
-    <div class="admin">
-        <div class="container">
-            <!-- added text append in to this -->
-            <div class="preview"></div>
+  <div class="admin">
+    <div class="container">
+      <!-- if create new post type append in to this input, cancel and add elements -->
+      <div class="inputs">
+        <textarea class="text" cols="30" rows="10">
+# Заголовок
+Header Text
+# Изображение
+!android-ծրագրավորող-android-ծրագրավորում.png
+# Ссылка
+[Visit To Academy Page](https://picsartacademy.am/) lkj lkjs kj lksjdfjslkjd lskjlkj
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut quam porro unde iusto tempora ipsum quasi, odit corporis voluptate consequuntur, minus aliquid, molestias provident voluptatum est impedit sit alias officia.
+Lorem ipsum dolor sit amet [WEB SITE](https://picsartacademy.am/) adipisicing elit. Eius temporibus quasi asperiores officiis fugiat vel, fuga optio natus facere earum ipsam voluptas, velit pariatur a nisi. Nesciunt necessitatibus deleniti nostrum.
+# Видео
+!https://www.youtube.com/embed/R55JUpfyPeg?si=-UOmbQc50lLxo59e
+# Список
+- item 1
+- item 2
+- item 3
+- item 4
+# Список 2
+* item 1
+* item 2
+* item 3
+* item 4</textarea>
+        <button class="createPost">compile</button>
+      </div>
 
-            <!-- if create new post type append in to this input, cancel and add elements -->
-            <div class="inputs"></div>
-
-            <!-- post controls buttons -->
-            <div class="controls">
-                <button class="createPost">create post</button>
-                <button class="createDataType">create data type</button>
-            </div>
-        </div>
-        <p class="result"></p>
+      <!-- show preview compiled text -->
+      <div class="preview"></div>
     </div>
-    <script type="module" src="js/pages/admin/admin.js"></script>
-    <script type="module" src="js/components/footer.js"></script>
+  </div>
+  <script type="module" src="js/pages/admin/admin.js"></script>
+  <script type="module" src="js/components/footer.js"></script>
 </body>
+
 </html>

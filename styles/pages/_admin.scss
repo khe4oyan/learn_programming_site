@@ -1,7 +1,22 @@
 .admin {
-    .container {
-        .preview{}
-        .inputs{}
-        .controls{}
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .inputs {
+      .text {
+        width: 100%;
+        height: 600px;
+      }
+
+      // .createPost {}
     }
+
+    .preview {
+      padding: 20px;
+      width: 100%;
+      img {
+        width: 50%;
+      }
+    }
+  }
 }
