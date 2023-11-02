@@ -15,6 +15,7 @@ class Compiler {
 		this.#previewDOM.innerHTML = '';
 		this.#whiteSpaceDelete(intermediateLines);
 		this.#checkingEveryLine();
+		this.#showCode();
 	}
 
 	#whiteSpaceDelete(intermediateLines) {
@@ -64,12 +65,56 @@ class Compiler {
 	}
 
 	#paragraph() {
-		
+		const text = this.#intermediateLines[this.#lineIndex];
+		let res = '';
+		let i = 0;
+
+		const linkCreate = () => {
+			let a_title = '';
+			let a_link = '';
+			do {
+				a_title += text[i++];
+			}while(text[i] !== ']');
+			++i;
+			
+			if (text[i] === '(') {
+				++i;
+				do {
+					a_link += text[i++];
+				}while(text[i] !== ')');
+			}
+
+			const done_link = `<a href="${a_link}">${a_title}</a>`;
+			res += done_link;
+		}
+
+		for (i; i < text.length; ++i) {
+			if (text[i] === '[') {
+				++i;
+				linkCreate();
+			} else {
+				res += text[i];
+			}
+		}
+
+		this.#append(Paragraph(res), `PR("${res}")`);
 	}
 
 	#append(elem, data) {
 		this.#previewDOM.appendChild(elem);
 		this.#convertedDataType.push(data);
+	}
+
+	#showCode() {
+		console.log(this.#convertedDataType);
+		const showCodeContainer = document.querySelector('.showCode');
+		showCodeContainer.innerHTML = '';
+
+		for (let i = 0; i < this.#convertedDataType.length; ++i) {
+			const p = document.createElement('p');
+			p.innerText = this.#convertedDataType[i];
+			showCodeContainer.appendChild(p);
+		}
 	}
 };
 
