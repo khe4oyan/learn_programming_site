@@ -2,21 +2,40 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     .inputs {
+      width: 100%;
+      * {
+        padding: 10px;
+      }
+      .postTitle {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
       .text {
         width: 100%;
         height: 600px;
       }
-
       // .createPost {}
     }
-
     .preview {
       padding: 20px;
       width: 100%;
       img {
         width: 50%;
       }
+    }
+  }
+  .cont2 {
+    margin-top: 20px;
+    display: block;
+    pre {
+      max-width: 100%;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+      overflow: scroll;
     }
   }
 }

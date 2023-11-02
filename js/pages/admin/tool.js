@@ -4,6 +4,7 @@ import NumberList from '../../components/postsTypes/NumberList.js'
 import Paragraph from '../../components/postsTypes/Paragraph.js'
 import PointList from '../../components/postsTypes/PointList.js'
 import Youtube from '../../components/postsTypes/Youtube.js'
+import {DB} from '../../data/DB.js';
 
 class Compiler {
 	#intermediateLines = [];
@@ -13,9 +14,17 @@ class Compiler {
 
 	constructor(intermediateLines) {
 		this.#previewDOM.innerHTML = '';
+		this.#titleCreate();
 		this.#whiteSpaceDelete(intermediateLines);
 		this.#checkingEveryLine();
 		this.#showCode();
+	}
+
+	#titleCreate() {
+		const h2 = document.createElement('h2');
+		h2.classList.add('title');
+		h2.innerText = document.querySelector('.postTitle').value;
+		this.#previewDOM.appendChild(h2);
 	}
 
 	#whiteSpaceDelete(intermediateLines) {
@@ -32,8 +41,8 @@ class Compiler {
 			switch(this.#intermediateLines[i][0]) {
 				case '#': { this.#textHeader(this.#intermediateLines[i].split('# ')[1]); break;}
 				case '!': { this.#imgOrVid(this.#intermediateLines[i]); break;}
-				case '-': { this.#list('-', NumberList); break;}
-				case '*': { this.#list('*', PointList); break;}
+				case '-': { this.#list('-', NumberList, 'NL'); break;}
+				case '*': { this.#list('*', PointList, 'PL'); break;}
 				default: this.#paragraph();
 			}
 		}
@@ -53,7 +62,7 @@ class Compiler {
 		}
 	}
 
-	#list(char, component) {
+	#list(char, component, listFunctionName) {
 		const list = [];
 
 		do {
@@ -61,7 +70,8 @@ class Compiler {
 			++this.#lineIndex;
 		}while(this.#lineIndex < this.#intermediateLines.length && this.#intermediateLines[this.#lineIndex][0] === char);
 
-		this.#append(component(list), 'change');
+		--this.#lineIndex;
+		this.#append(component(list), `${listFunctionName}(${JSON.stringify(list)})`);
 	}
 
 	#paragraph() {
@@ -97,7 +107,7 @@ class Compiler {
 			}
 		}
 
-		this.#append(Paragraph(res), `PR("${res}")`);
+		this.#append(Paragraph(res), `PR(\`${res}\`)`);
 	}
 
 	#append(elem, data) {
@@ -106,15 +116,17 @@ class Compiler {
 	}
 
 	#showCode() {
-		console.log(this.#convertedDataType);
 		const showCodeContainer = document.querySelector('.showCode');
 		showCodeContainer.innerHTML = '';
 
+		const input = document.querySelector('.postTitle');
+		showCodeContainer.innerHTML += `{\n\t\tid: ${DB.posts.length} , title: "${input.value}", content: [\n`
+
 		for (let i = 0; i < this.#convertedDataType.length; ++i) {
-			const p = document.createElement('p');
-			p.innerText = this.#convertedDataType[i];
-			showCodeContainer.appendChild(p);
+			showCodeContainer.innerText += '\t\t' + this.#convertedDataType[i] + ',\n';
 		}
+
+		showCodeContainer.innerHTML += ']},';
 	}
 };
 
