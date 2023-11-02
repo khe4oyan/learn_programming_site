@@ -1,4 +1,6 @@
 export class DOM {
+	constructor() { throw new Error('not instance'); }
+
 	static #classList(classList, element) {
 		if (classList === null) { return; }
 		if (Array.isArray(classList)) {

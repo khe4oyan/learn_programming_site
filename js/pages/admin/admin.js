@@ -1,35 +1,9 @@
-import HeaderText from '../components/postsTypes/HeaderText.js'
-import Image from '../components/postsTypes/Image.js'
-import NumberList from '../components/postsTypes/NumberList.js'
-import Paragraph from '../components/postsTypes/Paragraph.js'
-import PointList from '../components/postsTypes/PointList.js'
-import Youtube from '../components/postsTypes/Youtube.js'
-
-import { DOM } from '../tools/dom.js';
-import {DB, postTypes} from '../data/DB.js'
+import { DOM } from '../../tools/dom.js';
+import {DB, postTypes} from '../../data/DB.js'
+import Tool from './tool.js'
 
 {
-    const preview = [];
-
-    const createPreview = (previewData) => {
-        const elem = DOM.CE('div');
-
-        let apenedElem = null;
-
-        console.log(previewData.type);
-        switch(previewData.type) {
-            case postTypes.headerText: { apenedElem = HeaderText(previewData.content);  break;}
-            case postTypes.image: { apenedElem = Image(previewData.content);  break;}
-            case postTypes.numberList: { apenedElem = NumberList(previewData.content);  break;}
-            case postTypes.paragraph: { apenedElem = Paragraph(previewData.content);  break;}
-            case postTypes.pointList: { apenedElem = PointList(previewData.content);  break;}
-            case postTypes.youtube: { apenedElem = Youtube(previewData.content);  break;}
-        }
-
-        elem.appendChild(apenedElem);
-
-        return elem;
-    }
+    const previewDataArray = [];
 
     const previewPush = (data) => {
         preview.push(data);
@@ -37,7 +11,7 @@ import {DB, postTypes} from '../data/DB.js'
         const previewDOM = DOM.GE('.preview');
         previewDOM.innerHTML = '';
         for (let i = 0; i < preview.length; ++i) {
-            previewDOM.appendChild(createPreview(preview[i]));
+            previewDOM.appendChild(Tool.createPreview(preview[i], postTypes));
         }
     }
 
@@ -72,7 +46,7 @@ import {DB, postTypes} from '../data/DB.js'
         addButton.innerText = 'add';
         addButton.addEventListener('click', () => {
             const post = {
-                id: Math.random() + '|' + new Date().getTime(),
+                id: Math.random() + '/' + new Date().getTime(),
                 content: inputData.value,
                 type: dataTypesList.value,
             };
