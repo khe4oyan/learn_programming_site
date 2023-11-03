@@ -1,15 +1,18 @@
 .header {
-    .academyBox {
-        @include respond(big-desktop) {
-            display: none;
-        }
+	.academyBox {
+		@include respond(big-desktop) {
+			display: none;
+		}
+
 		.academyBox-container {
 			.link {
 				padding: 12px 24px;
 			}
 		}
+
 		@include respond(tab-land) {
 			height: fit-content;
+
 			.academyBox-container {
 				display: flex;
 				align-items: center;
@@ -18,15 +21,15 @@
 				width: fit-content;
 				padding: 0;
 				grid-gap: 10px;
-				&:hover {
-					background-color: none;
-				}
+
 				.img {
 					width: 50px;
 				}
+
 				.title {
 					display: none;
 				}
+
 				.link {
 					height: fit-content;
 					display: block;
@@ -34,25 +37,28 @@
 				}
 			}
 		}
+
 		@include respond(phone) {
 			.academyBox-container {
 				.img {
 					width: 40px;
 				}
+
 				.link {
 					font-size: 16px;
 					padding: 12px 24px;
 				}
 			}
 		}
-    }
+	}
 }
+
 .homePage {
-    .academyBox {
-        @include respond(tab-land) {
-            display: none;
-        }
-    }
+	.academyBox {
+		@include respond(tab-land) {
+			display: none;
+		}
+	}
 }
 
 .academyBox {
@@ -61,7 +67,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	
+
 	.academyBox-container {
 		padding: 20px;
 		border-radius: 5px;
@@ -69,17 +75,23 @@
 
 		&:hover {
 			background-color: rgba(0, 0, 0, .05);
+			@include respond(tab-land) {
+				background-color: initial;
+			}
 		}
 	}
+
 	.img {
 		width: 160px;
 	}
+
 	.title {
 		color: $color-primary-dark;
 		font-weight: 100;
 		font-size: 1.8rem;
 		margin-bottom: 20px;
 	}
+
 	.link {
 		padding: 10px 15px;
 		border-radius: 12px;
@@ -89,6 +101,7 @@
 		transition: .15s;
 		text-decoration: none;
 	}
+
 	.link:hover {
 		background-color: $color-primary-light;
 	}

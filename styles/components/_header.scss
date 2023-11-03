@@ -40,10 +40,12 @@
     .container {
       padding: 0px;
       .leftSideBox {
+        margin-bottom: 10px;
         .logo {
           display: none;
         }
         .text {
+          text-align: center;
           font-size: 20px;
         }
       }

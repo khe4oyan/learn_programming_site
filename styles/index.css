@@ -151,14 +151,18 @@ a {
     margin: auto;
   }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 420px) {
   .header .container {
     padding: 0px;
+  }
+  .header .container .leftSideBox {
+    margin-bottom: 10px;
   }
   .header .container .leftSideBox .logo {
     display: none;
   }
   .header .container .leftSideBox .text {
+    text-align: center;
     font-size: 20px;
   }
 }
@@ -236,6 +240,23 @@ a {
     margin-bottom: 5px;
   }
 }
+@media only screen and (max-width: 420px) {
+  .postShort {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 10px;
+    flex: 1;
+    grid-gap: 3px;
+  }
+  .postShort .littleBox a {
+    font-size: 0.9rem;
+  }
+  .postShort .littleBox .shortParagraph a {
+    font-weight: 100;
+  }
+}
 
 @media only screen and (min-width: 1341px) {
   .header .academyBox {
@@ -258,9 +279,6 @@ a {
     padding: 0;
     grid-gap: 10px;
   }
-  .header .academyBox .academyBox-container:hover {
-    background-color: none;
-  }
   .header .academyBox .academyBox-container .img {
     width: 50px;
   }
@@ -273,7 +291,7 @@ a {
     padding: 5px 10px;
   }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 420px) {
   .header .academyBox .academyBox-container .img {
     width: 40px;
   }
@@ -304,6 +322,11 @@ a {
 .academyBox .academyBox-container:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+@media only screen and (max-width: 1340px) {
+  .academyBox .academyBox-container:hover {
+    background-color: initial;
+  }
+}
 .academyBox .img {
   width: 160px;
 }
@@ -331,6 +354,18 @@ a {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #c20bc1;
+}
+@media only screen and (max-width: 688px) {
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 1.3rem;
+  }
 }
 
 .headerText {
@@ -368,7 +403,6 @@ a {
 
 .paragraph {
   margin-bottom: 0.5rem;
-  text-align: justify;
 }
 .paragraph a {
   text-underline-offset: 7%;
@@ -396,16 +430,29 @@ a {
   width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 688px) {
+  .youtube {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .youtube {
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .youtube {
+    height: 180px;
+  }
+}
 
 .container {
   padding: 0px 20px;
   max-width: 1441px;
   margin: auto;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 420px) {
   .container {
     padding: 0px 16px;
   }
 }
-
-/*# sourceMappingURL=index.css.map */

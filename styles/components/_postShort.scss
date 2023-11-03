@@ -33,4 +33,25 @@
 		min-width: initial;
 		margin-bottom: 5px;
 	}
+
+	@include respond(phone) {
+		width: 100%;
+		height: fit-content;
+		display: grid;
+		grid-template-columns: 70% 30%;
+		padding: 10px;
+		flex: 1;
+		grid-gap: 3px;
+
+		.littleBox {
+			a {
+			 font-size: .9rem;
+			}
+			.shortParagraph {
+				a {
+					font-weight: 100;
+				}
+			}
+		}
+	}
 }
