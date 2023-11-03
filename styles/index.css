@@ -186,7 +186,7 @@ a {
 .footer .container .copyright {
   margin-top: 10px;
   font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.8);
   text-align: center;
   margin-bottom: 5px;
 }
@@ -407,3 +407,5 @@ a {
     padding: 0px 16px;
   }
 }
+
+/*# sourceMappingURL=index.css.map */
