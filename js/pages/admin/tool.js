@@ -55,7 +55,7 @@ class Compiler {
 	#imgOrVid(text) {
 		text = text.split('!')[1];
 
-		if (text.includes('.png')) {
+		if (text.includes('.webp')) {
 			this.#append(Image(text), `IMG('${text}')`);
 		} else {
 			this.#append(Youtube(text), `YT('${text}')`);
