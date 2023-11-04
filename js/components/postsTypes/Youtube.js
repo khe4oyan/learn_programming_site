@@ -3,7 +3,7 @@ export default function Youtube(youtubeLink) {
 
 	YTBox += `
 		<iframe id="ytplayer" type="text/html" width="100%" height="inherit"
-			src=${YTlink}
+			src=${youtubeLink}
 			frameborder="0">
 		</iframe>
 	`;
