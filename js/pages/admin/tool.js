@@ -47,16 +47,16 @@ class Compiler {
 	}
 
 	#textHeader(text) {
-		this.#append(HeaderText(text), `HT('${text}')`);
+		this.#append(HeaderText(text));
 	}
 
 	#imgOrVid(text) {
 		text = text.split('!')[1];
 
 		if (text.includes('.webp')) {
-			this.#append(Image(text), `IMG('${text}')`);
+			this.#append(Image(text));
 		} else {
-			this.#append(Youtube(text), `YT('${text}')`);
+			this.#append(Youtube(text));
 		}
 	}
 
@@ -69,7 +69,7 @@ class Compiler {
 		}while(this.#lineIndex < this.#intermediateLines.length && this.#intermediateLines[this.#lineIndex][0] === char);
 
 		--this.#lineIndex;
-		this.#append(component(list), `${listFunctionName}(${JSON.stringify(list)})`);
+		this.#append(component(list));
 	}
 
 	#paragraph() {
@@ -105,10 +105,10 @@ class Compiler {
 			}
 		}
 
-		this.#append(Paragraph(res), `PR(\`${res}\`)`);
+		this.#append(Paragraph(res));
 	}
 
-	#append(elem, data) {
+	#append(elem) {
 		this.#previewDOM.innerHTML += elem;
 	}
 
@@ -129,24 +129,22 @@ export default Compiler;
 /*
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="shortcut icon" href="assets/favicons/favicon-192.png" type="image/x-icon">
-	<link rel="stylesheet" href="styles/index.css">
-	<title>Սկսնակ ծրագրավորողի ուղեցույց</title>
-</head>
-
-<body>
-	(header here)
-	<div class="post">
-		<div class="container">
-			<h2 class="title">(title)</h2>
-			(all data in here)
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="assets/favicons/favicon-192.png" type="image/x-icon">
+		<link rel="stylesheet" href="styles/index.css">
+		<title>Սկսնակ ծրագրավորողի ուղեցույց</title>
+	</head>
+	<body>
+		(header here)
+		<div class="post">
+			<div class="container">
+				<h2 class="title">(title)</h2>
+				(all data in here)
+			</div>
 		</div>
-	</div>
-	(footer here)
-</body>
+		(footer here)
+	</body>
 </html>
 */
