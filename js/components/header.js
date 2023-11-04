@@ -8,7 +8,7 @@ function header() {
 				</div>
 				<div class="academyBox">
 					<div class="academyBox-container">
-						<img src="assets/academyLogo.png" class="academy_logo" alt="img">
+						<img src="assets/academyLogo.png" alt="academy_logo" class="img">
 						<a href="https://picsart.academy/" target="_blank" class="link">Այցելել</a>
 					</div>
 				</div>
