@@ -1,9 +1,11 @@
-import HeaderText from '../../components/postsTypes/HeaderText.js'
-import Image from '../../components/postsTypes/Image.js'
-import NumberList from '../../components/postsTypes/NumberList.js'
-import Paragraph from '../../components/postsTypes/Paragraph.js'
-import PointList from '../../components/postsTypes/PointList.js'
-import Youtube from '../../components/postsTypes/Youtube.js'
+import HeaderText from '../../components/postsTypes/HeaderText.js';
+import Image from '../../components/postsTypes/Image.js';
+import NumberList from '../../components/postsTypes/NumberList.js';
+import Paragraph from '../../components/postsTypes/Paragraph.js';
+import PointList from '../../components/postsTypes/PointList.js';
+import Youtube from '../../components/postsTypes/Youtube.js';
+import header from '../../components/header.js';
+import footer from '../../components/footer.js';
 
 class Compiler {
 	#intermediateLines = [];
@@ -114,19 +116,8 @@ class Compiler {
 
 	#showCode() {
 		const showCodeContainer = document.querySelector('.showCode');
-		showCodeContainer.innerHTML = '';
 
-		const postTitle = document.querySelector('.postTitle').value;
-		// DOCTYPE
-		// HTML
-		// HEAD
-		// BODY
-	}
-};
-
-export default Compiler;
-
-/*
+		showCodeContainer.innerText = `
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -137,14 +128,17 @@ export default Compiler;
 		<title>Սկսնակ ծրագրավորողի ուղեցույց</title>
 	</head>
 	<body>
-		(header here)
+		${header()}
 		<div class="post">
 			<div class="container">
-				<h2 class="title">(title)</h2>
-				(all data in here)
+				${this.#previewDOM.innerHTML}
 			</div>
 		</div>
-		(footer here)
+		${footer()}
 	</body>
 </html>
-*/
+		`;
+	}
+};
+
+export default Compiler;

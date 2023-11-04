@@ -1,7 +1,7 @@
 export default function Image(imgName) {
 	return `
-		<div>
-			<img src="img/${imgName}" alt="post_image" />
+		<div class="image">
+			<img src="img/${imgName}" alt="post_image" class="img" />
 		</div> 
 	`;
 }
