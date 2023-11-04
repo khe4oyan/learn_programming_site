@@ -4,7 +4,6 @@ import NumberList from '../../components/postsTypes/NumberList.js'
 import Paragraph from '../../components/postsTypes/Paragraph.js'
 import PointList from '../../components/postsTypes/PointList.js'
 import Youtube from '../../components/postsTypes/Youtube.js'
-import {DB} from '../../data/DB.js';
 
 class Compiler {
 	#intermediateLines = [];
@@ -111,7 +110,8 @@ class Compiler {
 	}
 
 	#append(elem, data) {
-		this.#previewDOM.appendChild(elem);
+		console.log(elem);
+		this.#previewDOM.innerHTML += elem;
 		this.#convertedDataType.push(data);
 	}
 
@@ -120,13 +120,12 @@ class Compiler {
 		showCodeContainer.innerHTML = '';
 
 		const input = document.querySelector('.postTitle');
-		showCodeContainer.innerHTML += `{\n\t\tid: ${DB.posts.length} , title: "${input.value}", content: [\n`
+		showCodeContainer.innerHTML += `{\n\t\tid: j , title: "${input.value}", content: [\n`
 
 		for (let i = 0; i < this.#convertedDataType.length; ++i) {
 			showCodeContainer.innerText += '\t\t' + this.#convertedDataType[i] + ',\n';
 		}
 
-		showCodeContainer.innerHTML += ']},';
 	}
 };
 
