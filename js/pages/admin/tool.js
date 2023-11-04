@@ -7,7 +7,6 @@ import Youtube from '../../components/postsTypes/Youtube.js'
 
 class Compiler {
 	#intermediateLines = [];
-	#convertedDataType = [];
 	#previewDOM = document.querySelector('.preview');
 	#lineIndex = 0;
 
@@ -110,23 +109,44 @@ class Compiler {
 	}
 
 	#append(elem, data) {
-		console.log(elem);
 		this.#previewDOM.innerHTML += elem;
-		this.#convertedDataType.push(data);
 	}
 
 	#showCode() {
 		const showCodeContainer = document.querySelector('.showCode');
 		showCodeContainer.innerHTML = '';
 
-		const input = document.querySelector('.postTitle');
-		showCodeContainer.innerHTML += `{\n\t\tid: j , title: "${input.value}", content: [\n`
-
-		for (let i = 0; i < this.#convertedDataType.length; ++i) {
-			showCodeContainer.innerText += '\t\t' + this.#convertedDataType[i] + ',\n';
-		}
-
+		const postTitle = document.querySelector('.postTitle').value;
+		// DOCTYPE
+		// HTML
+		// HEAD
+		// BODY
 	}
 };
 
 export default Compiler;
+
+/*
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="assets/favicons/favicon-192.png" type="image/x-icon">
+	<link rel="stylesheet" href="styles/index.css">
+	<title>Սկսնակ ծրագրավորողի ուղեցույց</title>
+</head>
+
+<body>
+	(header here)
+	<div class="post">
+		<div class="container">
+			<h2 class="title">(title)</h2>
+			(all data in here)
+		</div>
+	</div>
+	(footer here)
+</body>
+</html>
+*/
