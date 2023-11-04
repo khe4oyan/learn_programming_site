@@ -46,9 +46,14 @@ export class DOM {
 
 	static YTframe(YTlink) {
 		return `
-			<iframe id="ytplayer" type="text/html" width="100%" height="inherit"
+			<iframe 
 				src=${YTlink}
-				frameborder="0">
+				id="ytplayer" 
+				type="text/html" 
+				width="100%" 
+				height="inherit"
+				frameborder="0"
+			>
 			</iframe>
 		`;
 	}
