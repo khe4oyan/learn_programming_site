@@ -1,41 +1,26 @@
-import { DOM } from "../tools/dom.js";
-import { academyBox } from "./academyBox.js";
+function header() {
+	let header = `
+		<header class="header">
+			<div class="container center">
+				<div class="leftSideBox center"> 
+					<img src="assets/favicons/favicon-512.png" class="logo" alt="logo" >
+					<h2 class="text clickableText">Տեսնել բոլոր հոդվածները</h2>
+				</div>
+				<div class="academyBox">
+					<div class="academyBox-container">
+						<img src="assets/academyLogo.png" class="academy_logo" alt="img">
+						<a href="https://picsart.academy/" target="_blank" class="link">Այցելել</a>
+					</div>
+				</div>
+			</div>
+		</header>
+	`;
 
-export function Header(headerPath) {
-	const headerDOM = DOM.CE('header', 'header');
-	const container = DOM.CE('div', ['center', 'container'], headerDOM);
+	// 	headerText.addEventListener('click', () => {
+	// 		window.history.back();
+	// 	});
 
-	{
-		const leftSideBox = DOM.CE('div', ['center', 'leftSideBox'], container);
-
-		const logo = DOM.img('assets/favicons/favicon-512.png', 'logo', 'logo');
-		leftSideBox.appendChild(logo);
-
-		const headerText = DOM.CE('h2', 'text', leftSideBox);
-		if (headerPath === 'home') {
-			headerText.innerText = 'Սկսնակ ծրագրավորողի ուղեցույց';
-		} else {
-			headerText.innerHTML = 'Տեսնել բոլոր հոդվածները';
-			headerText.classList.add('clickableText');
-			headerText.addEventListener('click', () => {
-				window.history.back();
-			});
-		}
-	}
-	container.appendChild(academyBox());
-
-
-	return headerDOM;
+	return header;
 }
 
-/*
-	<header className='header'>
-		<div className='container center'>
-			<div className='center'>
-				<img className='header__logo' src="/assets/logo.png" alt="logo" />
-				<h2 className='header__logo__text'>Learn Programming</h2>
-			</div>
-			<input className='header__search' type="search" placeholder='Search' />
-		</div>
-	</header>
-*/
+export default header;

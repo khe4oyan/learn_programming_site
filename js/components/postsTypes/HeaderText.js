@@ -1,14 +1,7 @@
-import { DOM } from "../../tools/dom.js";
-
 export default function HeaderText(headerData) {
-	const headerText = DOM.CE('div', 'headerText');
-	const h3 = DOM.CE('h3', null, headerText);
-	h3.innerText = headerData;
-	return headerText;
+	return `
+		<div class="headerText">
+			<h3>${headerData}</h3>
+		</div>
+	`;
 }
-
-/* 
-<div class="headerText">
-	<h3>{headerText}</h3>
-</div>  
-*/

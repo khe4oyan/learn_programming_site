@@ -1,6 +1,3 @@
-import { DOM } from "../tools/dom.js";
-import { postTypes } from '../data/DB.js'
-
 export function PostShort({ id, title, content }) {
 	const elem = DOM.CE('div', 'postShort');
 	let textPreview = '';

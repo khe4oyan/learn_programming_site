@@ -1,23 +1,10 @@
-import { DOM } from "../../tools/dom.js";
-
 export default function NumberList(dataList) {
-	const numberList = DOM.CE('div', 'numberList');
+	let numberList = '<div class="numberList">';
 
 	for (let i = 0; i < dataList.length; ++i) {
-		const p = DOM.CE('p', 'line', numberList);
-		p.innerHTML = `<span>${i + 1}.</span> ${dataList[i]}`;
+		numberList += `<p class="line"><span>${i + 1}.</span> ${dataList[i]}</p>`;
 	}
 
+	numberList += '</div>';
 	return numberList;
 }
-
-
-/*
-<div>
-	{
-		content.map((item, i) => 
-			<p><span>{i}. </span> {item}</p>
-		)
-	}
-</div>
-*/
