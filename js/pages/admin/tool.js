@@ -37,12 +37,12 @@ class Compiler {
 	#checkingEveryLine() {
 		for (this.#lineIndex; this.#lineIndex < this.#intermediateLines.length; ++this.#lineIndex) {
 			const i = this.#lineIndex;
-			
-			switch(this.#intermediateLines[i][0]) {
-				case '#': { this.#textHeader(this.#intermediateLines[i].split('# ')[1]); break;}
-				case '!': { this.#imgOrVid(this.#intermediateLines[i]); break;}
-				case '-': { this.#list('-', NumberList, 'NL'); break;}
-				case '*': { this.#list('*', PointList, 'PL'); break;}
+
+			switch (this.#intermediateLines[i][0]) {
+				case '#': { this.#textHeader(this.#intermediateLines[i].split('# ')[1]); break; }
+				case '!': { this.#imgOrVid(this.#intermediateLines[i]); break; }
+				case '-': { this.#list('-', NumberList, 'NL'); break; }
+				case '*': { this.#list('*', PointList, 'PL'); break; }
 				default: this.#paragraph();
 			}
 		}
@@ -68,7 +68,7 @@ class Compiler {
 		do {
 			list.push(this.#intermediateLines[this.#lineIndex].split(`${char} `)[1]);
 			++this.#lineIndex;
-		}while(this.#lineIndex < this.#intermediateLines.length && this.#intermediateLines[this.#lineIndex][0] === char);
+		} while (this.#lineIndex < this.#intermediateLines.length && this.#intermediateLines[this.#lineIndex][0] === char);
 
 		--this.#lineIndex;
 		this.#append(component(list));
@@ -84,14 +84,14 @@ class Compiler {
 			let a_link = '';
 			do {
 				a_title += text[i++];
-			}while(text[i] !== ']');
+			} while (text[i] !== ']');
 			++i;
-			
+
 			if (text[i] === '(') {
 				++i;
 				do {
 					a_link += text[i++];
-				}while(text[i] !== ')');
+				} while (text[i] !== ')');
 			}
 
 			const done_link = `<a href="${a_link}">${a_title}</a>`;
