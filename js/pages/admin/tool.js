@@ -62,7 +62,7 @@ class Compiler {
 		}
 	}
 
-	#list(char, component, listFunctionName) {
+	#list(char, component) {
 		const list = [];
 
 		do {
