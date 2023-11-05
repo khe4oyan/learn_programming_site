@@ -8,10 +8,6 @@
   margin-bottom: 2rem;
   padding: 17px 0;
 
-  .clickableText {
-    cursor: pointer;
-  }
-
   .container {
     .leftSideBox {
       .logo {
@@ -19,6 +15,9 @@
       }
       .text {
         margin-left: 15px;
+        font-size: 1.5rem;
+        text-decoration: none;
+        font-weight: bold;
         color: $color-primary;
       }
     }

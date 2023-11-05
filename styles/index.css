@@ -130,14 +130,14 @@ a {
   margin-bottom: 2rem;
   padding: 17px 0;
 }
-.header .clickableText {
-  cursor: pointer;
-}
 .header .container .leftSideBox .logo {
   width: 37px;
 }
 .header .container .leftSideBox .text {
   margin-left: 15px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
   color: #c20bc1;
 }
 @media only screen and (max-width: 688px) {
@@ -456,3 +456,5 @@ a {
     padding: 0px 16px;
   }
 }
+
+/*# sourceMappingURL=index.css.map */
