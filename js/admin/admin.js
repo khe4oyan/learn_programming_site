@@ -1,4 +1,4 @@
-import { DOM } from '../../tools/dom.js';
+import { DOM } from './dom.js';
 import Compiler from './tool.js'
 
 {
